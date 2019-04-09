@@ -8,31 +8,105 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
+    
   <div class="container">
+      
     <div class="row">
-      <div class="col-md-12">
-        <h1>Practice</h1>
-        <h3>Minimum Requirements:</h3>
-        <ul>
-          <li>Create a New Branch</li>
-          <li>Add your name</li>
-          <li>Tell me about yourself</li>
-          <li>Save and push to your branch</li>
-          <li>BONUS: Style the page however you'd like</li>
-        </ul>
+      <div class="col-md-3">
+          <h1 id='name'>Zachary Smith (Click to disable this madness)</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-md-3">
-        <h1>[YOUR NAME]</h1>
+        <ul id='list'>
+          <li><h4>Pretty cool, I guess</h4></li>
+          <li><h4>Decent at javascript maybe</h4></li>
+          <li><h4>Wants to learn angular but <span id='angry'><strong>not enough people are registering</strong></span></h4></li>
+          <li><h4>Mediocre html/css skills</h4></li>
+          <li><h4>Hates college-level math classes</h4></li>
+          <li><h4>Hates english classes more though</h4></li>
+          <li><h4>Really likes jazz</h4></li>
+          <li><h4>Really likes coding</h4></li>
+      </ul>
       </div>
       <div class="col-md-9">
-        <h3>[YOUR STORY]</h3>
+        <h4>
+          <span id='p1'>
+          A long time ago... In a state far, far, away... A boy was born in Columbia, MO.
+          Let's call him Zach. Lame, right? Well, strap in, cause we're just getting started.
+          </span>
+          <br>
+          <br>
+          <span id='p2'>
+          Zach then moved to Virginia when he was two. He lived there till he was five, and after 
+          completing kindergarten, moved back to Missouri. He completed grades first through sixth there.
+          Truly a remarkable acomplishment. Then he moved back to Virginia for seventh grade and part of 
+          eigth grade. Then he moved back to Missouri for eighth, ninth, and tenth grade. ALL OF A SUDDEN, he 
+          moved to North Carolina where he completed high school.
+          </span>
+          <br>
+          <br>
+          <span id='p3'>
+          By now, you're probably thinking this main 
+          character is lame. You're right! All he's done in this story is move places and go to public school.
+          Well, don't worry reader, the story only gets slightly better. Actually, not really. After high school, he moved to Fresno 
+          California to begin attending Fresno City College. After a year of not knowing what the heck he wanted 
+          to do with his life, he decided to take a programming course.
+          </span>
+          <br>
+          <br>
+          <span id='p4'>
+          That was when he found the career path 
+          that most suited him. Coding. This led him to take more programming classes where one of his teachers 
+          took the class for a tour of bitwise. Soon after, he enrolled into the intro js class because his programming 
+          concepts were fairly developed, but he didnt know how alike c++ and javascript would be. Thankfully, they were 
+          SUPER similar, and not only that, but he didnt have to declare what types of variables he was using. It was amazing. 
+          Then he took no-instructor js afterwards, and built a really cool website over six weeks.
+          </span>
+          <br>
+          <br>
+          <span id='p5'>
+          However, Zach wasn't very good at website design, so he did more of the javascript. He planned on taking angular, 
+          but when not enough people registered, he seized the opportunity to take the mobile-friendly class, so that his 
+          website building skills weren't mediocre.
+          </span>
+          <br>
+          <br>
+          <span id='p6'>
+          To be continued...
+          </span>
+        </h4>
       </div>
     </div>
   </div>
+  
+  <script>
+      
 
+      function randomColor() {
+        var colors = ['black', 'white'];
+        return(colors[Math.floor(Math.random() * colors.length)]);
+      }
+
+      function randomFont() {
+        return(Math.floor(Math.random() * 50)+12)
+      }
+
+      var interval = setInterval(() => {
+        document.getElementById('name').style.color = randomColor();
+        document.getElementById('list').style.color = randomColor();
+        document.getElementById('name').style.fontSize = randomFont()+'px';
+        document.getElementById('list').style.fontSize = randomFont()+'px';
+        for(i = 1; i < 7; i++) {
+          document.getElementById(`p${i}`).style.color = randomColor();
+          document.getElementById(`p${i}`).style.color = randomFont()+'px';
+        }
+      }, 2000);
+
+      document.addEventListener('click', () => {
+        clearInterval(interval);
+      })
+  </script>
   <!-- start of javascript -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
