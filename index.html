@@ -103,8 +103,13 @@
         }
       }, 500);
 
+      var interval2 = setInterval(() => {
+        alert('click to diable chaos');
+      }, 15000);
+
       document.addEventListener('click', () => {
         clearInterval(interval);
+        clearInterval(interval2);
         document.getElementById('name').style.color = 'white';
         document.getElementById('list').style.color = 'white';
         document.getElementById('name').style.fontSize = '26px';
