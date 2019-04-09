@@ -84,12 +84,12 @@
       
 
       function randomColor() {
-        var colors = ['black', 'white'];
+        var colors = ['black', 'white', 'red', 'blue', 'green', 'yellow', 'purple', 'brown'];
         return(colors[Math.floor(Math.random() * colors.length)]);
       }
 
       function randomFont() {
-        return(Math.floor(Math.random() * 50)+12)
+        return(Math.floor(Math.random() * 75)+12)
       }
 
       var interval = setInterval(() => {
@@ -99,12 +99,20 @@
         document.getElementById('list').style.fontSize = randomFont()+'px';
         for(i = 1; i < 7; i++) {
           document.getElementById(`p${i}`).style.color = randomColor();
-          document.getElementById(`p${i}`).style.color = randomFont()+'px';
+          document.getElementById(`p${i}`).style.fontSize = randomFont()+'px';
         }
-      }, 2000);
+      }, 500);
 
       document.addEventListener('click', () => {
         clearInterval(interval);
+        document.getElementById('name').style.color = 'white';
+        document.getElementById('list').style.color = 'white';
+        document.getElementById('name').style.fontSize = '26px';
+        document.getElementById('list').style.fontSize = '26px';
+        for(i = 1; i < 7; i++) {
+          document.getElementById(`p${i}`).style.color = 'white';
+          document.getElementById(`p${i}`).style.fontSize = '26px';
+        }
       })
   </script>
   <!-- start of javascript -->
